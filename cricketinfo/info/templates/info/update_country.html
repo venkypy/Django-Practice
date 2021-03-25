@@ -1,0 +1,13 @@
+{% extends 'info/home.html' %}
+{% block container %}
+    <h1> COUNTRY UPDATE FORM </h1><br>
+    <h4> {{ message }} </h4>
+    <form method="post">
+        {%csrf_token%}
+        Name:  <input type="text" name="name" value="{{data.name}}"><br>
+        Flag:  <input type="file" name="flag"><br>
+        Shortname: <input type="text" name="shortname" value="{{data.shortname}}"><br>
+        Description: <input type="textarea" name="description" value="{{data.description}}"><br>
+        <input type="submit" name="" value="Update Player">
+    </form>
+{% endblock %}

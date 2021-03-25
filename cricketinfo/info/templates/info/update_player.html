@@ -1,0 +1,13 @@
+{% extends 'info/home.html' %}
+{% block container %}
+    <h1> PLAYER UPDATE FORM </h1>
+    <h4>{{ message }} </h4>
+    <form method="post">
+        {% csrf_token %}
+        Name  <input type="text" name="name" value="{{player.name}}"><br><br>
+        Country  <input type="text" name="country" value="{{player.country}}"><br><br>
+        Role  <input type="text" name="role" value="{{player.role}}"><br><br>
+        Highscore  <input type="number" name="hs" value="{{player.hs}}"><br><br>
+        <input type="submit" name="" value="Update Player">
+    </form>
+{% endblock %}

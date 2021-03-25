@@ -1,0 +1,28 @@
+{% extends 'info/home.html' %}
+{% block container %}
+
+    <h2> List of Countries </h2>
+    <table border="2">
+        <tr>
+            <th>Name</th>
+            <th>Flag</th>
+            <th>Shortname</th>
+            <th>Description</th>
+            <th>Operations</th>
+        </tr>
+        {% for cnt in countries %}
+        <tr>
+            <td>{{ cnt.name }}</td>
+            <td>{{ cnt.flag }}</td>
+            <td>{{ cnt.shortname }}</td>
+            <td>{{ cnt.description }}</td>
+            <td>
+                <a href="/update_country/{{cnt.id}}">update</a>!!
+                <a href="/delete_country/{{cnt.id}}">delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table> <br>
+    <h4>{{ message }}</h4>
+    <h4><a href="/add_country">Add Country</a></h4>
+{% endblock %}
